@@ -22,11 +22,16 @@ function setup() {
 	//Create the Bodies Here.
 	roo=new roof(400,30,600,40);
 	
-	b1 = new bob(500,100,20);
-	b2 = new bob(400,100,20);
-	b3 = new bob(300,100,20);
-	b4 = new bob(200,100,20);
-	b5 = new bob(100,100,20);
+	var r =Math.round(random(1,255))
+	var g =Math.round(random(1,255))
+	var b =Math.round(random(1,255))
+	
+	fill(color(r,g,b))
+	b1 = new bob(100,100,50);
+	b2 = new bob(300,100,50);
+	b3 = new bob(400,100,50);
+	b4 = new bob(500,100,50);
+	b5 = new bob(600,100,50);
 
 	c1 = new chai(b1.body,roo.body,-200,0);
 	c2 = new chai(b2.body,roo.body,-100,0);
@@ -45,10 +50,15 @@ function draw() {
   
   roo.display();
 
+  
   b1.display();
+  
   b2.display();
+  
   b3.display();
+  
   b4.display();
+  
   b5.display();
 
   c1.display();
@@ -64,6 +74,6 @@ function keyPressed()
 {
 	if(keyDown(UP_ARROW))
 	{
-        Matter.Body.applyForce(b1.body,b1.body.position,{x:-50,y:-50});
+        Matter.Body.applyForce(b1.body,b1.body.position,{x:-200,y:-100});
 	}
 }

@@ -4,9 +4,10 @@ class chai
     {
         this.offsetX=offsetX;
         this.offsetY=offsetY;
-         var properties={bodyA:BodyA,bodyB:BodyB,pointB:{x:this.offsetX,y:this.offsetY},stiffness:1,length:10}
+         var properties={bodyA:BodyA,bodyB:BodyB,pointB:{x:this.offsetX,y:this.offsetY},stiffness:1,length:500}
          this.cha=constraint.create(properties);
 
+         World.add(world,this.cha);
     }
     display()
     {
